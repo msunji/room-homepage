@@ -4,13 +4,50 @@ import { slideContent } from "../../content/slideContent";
 import {
   SlideGrid,
   SlideImg,
-  ImgControls,
+  ControlsContainer,
   SlideText,
   SlideControls,
   ShopNowText,
 } from "./SlideParts";
 
-const Slide = ({ header, body }) => {
+const Slide = ({
+  header,
+  body,
+  mobileBg,
+  desktopBg,
+  handleNextClick,
+  handlePrevClick,
+}) => {
+  return (
+    <SlideGrid>
+      <SlideImg mobileBg={mobileBg} desktopBg={desktopBg} />
+      <ControlsContainer>
+        <SlideControls>
+          <div className="controls controls-left" onClick={handlePrevClick}>
+            <img src="/img/layout/icon-angle-left.svg" alt="Click Left" />
+          </div>
+          <div className="controls controls-right" onClick={handleNextClick}>
+            <img src="/img/layout/icon-angle-right.svg" alt="Click Right" />
+          </div>
+        </SlideControls>
+        <SlideText>
+          <Container>
+            <h1 className="slide-header">{header}</h1>
+            <p className="slide-body">{body}</p>
+            <ShopNowText>
+              <h3>Shop Now</h3>
+              <img src="/img/icon-arrow.svg" alt="Long arrow pointing right" />
+            </ShopNowText>
+          </Container>
+        </SlideText>
+      </ControlsContainer>
+    </SlideGrid>
+  );
+};
+
+export const Slides = () => {
+  console.log(slideContent);
+
   let [currentSlide, setCurrentSlide] = useState(0);
   let totalSlides = slideContent.length;
 
@@ -24,38 +61,21 @@ const Slide = ({ header, body }) => {
   };
 
   return (
-    <SlideGrid>
-      <ImgControls>
-        <SlideImg />
-        <SlideControls>
-          <div className="controls controls-left" onClick={handlePrevClick}>
-            <img src="/img/layout/icon-angle-left.svg" alt="Click Left" />
-          </div>
-          <div className="controls controls-right" onClick={handleNextClick}>
-            <img src="/img/layout/icon-angle-right.svg" alt="Click Right" />
-          </div>
-        </SlideControls>
-      </ImgControls>
-
-      <SlideText>
-        <Container>
-          <h1>{header}</h1>
-          <p>{body}</p>
-          <ShopNowText>Shop Now</ShopNowText>
-        </Container>
-      </SlideText>
-    </SlideGrid>
-  );
-};
-
-export const Slides = () => {
-  console.log(slideContent);
-  return (
     <>
       {/* <Slide /> */}
-      {slideContent.map((slide, index) => (
-        <Slide key={slide.id} header={slide.header} body={slide.body} />
-      ))}
+      {slideContent.map((slide, index) =>
+        index === currentSlide ? (
+          <Slide
+            key={slide.id}
+            header={slide.header}
+            body={slide.body}
+            desktopBg={slide.imgDesktop}
+            mobileBg={slide.imgMobile}
+            handleNextClick={handleNextClick}
+            handlePrevClick={handlePrevClick}
+          />
+        ) : null
+      )}
     </>
   );
 };
