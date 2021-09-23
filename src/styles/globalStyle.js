@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%);
     --sans-serif: "Spartan", sans-serif;
+    --padding-y: 1rem;
+    --padding-x: 1rem;
   }
 
   * {
