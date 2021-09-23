@@ -33,18 +33,27 @@ export const ControlsContainer = styled.div`
 
 export const SlideText = styled.div`
   padding: calc(6 * var(--padding-y)) 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
 
   .slide-header {
     font-weight: 600;
     color: var(--black);
     letter-spacing: -1.17px;
-    font-size: 2.3em;
+    font-size: clamp(2.3rem, 1.5275rem + 2.575vw, 3.33rem);
     line-height: 1.2;
     margin-bottom: 1.5rem;
   }
 
   .slide-body {
     margin-bottom: 5rem;
+  }
+
+  @media screen and ${breakpoints.lg} {
+    .slide-header {
+      margin-bottom: 2rem;
+    }
   }
 `;
 
@@ -83,6 +92,8 @@ export const SlideControls = styled.div`
     top: unset;
     bottom: 0;
     left: 0;
+    height: 80px;
+    width: 160px;
   }
 `;
 
