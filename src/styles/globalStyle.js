@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body, html {
-    overflow: hidden;
+    overflow-x: hidden;
     height: 100vh;
     font-size: 12px;
     font-family: var(--sans-serif);
@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
   }
   p {
     color: var(--grey-dark);
-    line-height: 1.6;
+    line-height: 1.8;
     letter-spacing: -0.25px;
   }
 `;
