@@ -7,6 +7,9 @@ export const SlideGrid = styled.section`
 
 export const SlideImg = styled.div`
   background: url(${(props) => props.mobileBg});
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
 `;
 
 export const ControlsContainer = styled.div`
@@ -57,8 +60,14 @@ export const SlideControls = styled.div`
 `;
 
 export const ShopNowText = styled.div`
-  color: var(--black);
-  font-weight: 500;
-  letter-spacing: 10px;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+
+  h3 {
+    color: var(--black);
+    font-weight: 500;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
 `;
