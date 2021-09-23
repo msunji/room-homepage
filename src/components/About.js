@@ -2,7 +2,9 @@ import styled from "styled-components";
 import breakpoints from "../styles/breakpoints";
 import { Container } from "./layout/Container";
 
-const AboutSection = styled.section``;
+const AboutSection = styled.section`
+  grid-area: about;
+`;
 
 const AboutGrid = styled.div`
   display: grid;
@@ -40,7 +42,7 @@ const AboutContainer = styled(Container)`
 
 export const About = () => {
   return (
-    <AboutSection>
+    <>
       <AboutGrid>
         <AboutDark />
         <AboutContainer>
@@ -56,6 +58,6 @@ export const About = () => {
         </AboutContainer>
         <AboutLight />
       </AboutGrid>
-    </AboutSection>
+    </>
   );
 };
