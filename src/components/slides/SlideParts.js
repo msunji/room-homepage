@@ -38,7 +38,7 @@ export const SlideControls = styled.div`
   width: 112px;
   background: var(--black);
   position: absolute;
-  bottom: 0;
+  top: -56px;
   right: 0;
   z-index: 100;
   display: grid;
@@ -51,10 +51,16 @@ export const SlideControls = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: background 0.4s ease;
 
     img {
       height: 1.4em;
       width: auto;
+    }
+
+    &:hover,
+    &:focus {
+      background: var(--grey-very-dark);
     }
   }
 `;
