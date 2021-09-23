@@ -6,25 +6,27 @@ export const SlideGrid = styled.section`
 `;
 
 export const SlideImg = styled.div`
-  min-height: 360px;
-  height: auto;
-  background: var(--grey-dark);
+  background: url(${(props) => props.mobileBg});
 `;
 
-export const ImgControls = styled.div`
+export const ControlsContainer = styled.div`
   position: relative;
 `;
 
 export const SlideText = styled.div`
   padding: calc(5 * var(--padding-y)) 0;
 
-  h1 {
+  .slide-header {
     font-weight: 600;
     color: var(--black);
     letter-spacing: -1.17px;
     font-size: 2.3em;
     line-height: 1.11;
     margin-bottom: 1.5rem;
+  }
+
+  .slide-body {
+    margin-bottom: 5rem;
   }
 `;
 
@@ -55,9 +57,8 @@ export const SlideControls = styled.div`
 `;
 
 export const ShopNowText = styled.div`
-  h3 {
-    color: var(--black);
-    font-weight: 500;
-    letter-spacing: 10px;
-    text-transform: uppercase;
+  color: var(--black);
+  font-weight: 500;
+  letter-spacing: 10px;
+  text-transform: uppercase;
 `;
