@@ -8,7 +8,7 @@ const AboutSection = styled.section`
 
 const AboutGrid = styled.div`
   display: grid;
-  grid-template-rows: minmax(238px, auto) 1fr minmax(227px, 1fr);
+  grid-template-rows: minmax(238px, auto) 1fr minmax(227px, auto);
 
   @media screen and ${breakpoints.lg} {
     grid-template-rows: 1fr;
@@ -18,7 +18,6 @@ const AboutGrid = styled.div`
 
 const AboutDark = styled.div`
   width: 100%;
-  min-height: 238px;
   background: url("/img/image-about-dark.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,7 +25,6 @@ const AboutDark = styled.div`
 
 const AboutLight = styled.div`
   width: 100%;
-  min-height: 227px;
   background: url("/img/image-about-light.jpg");
   background-size: cover;
   background-repeat: no-repeat;
