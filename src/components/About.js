@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakpoints from "../styles/breakpoints";
 import { Container } from "./layout/Container";
 
 const AboutSection = styled.section``;
@@ -6,6 +7,11 @@ const AboutSection = styled.section``;
 const AboutGrid = styled.div`
   display: grid;
   grid-template-rows: minmax(238px, auto) 1fr minmax(227px, 1fr);
+
+  @media screen and ${breakpoints.lg} {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1.5fr 2fr 1.5fr;
+  }
 `;
 
 const AboutDark = styled.div`
