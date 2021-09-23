@@ -53,11 +53,10 @@ export const Slides = () => {
 
   // Button clickevents
   const handleNextClick = () => {
-    let current = currentSlide;
-    console.log("fire next");
+    setCurrentSlide(currentSlide === totalSlides - 1 ? 0 : currentSlide + 1);
   };
   const handlePrevClick = () => {
-    console.log("fire prev");
+    setCurrentSlide(currentSlide === 0 ? totalSlides - 1 : currentSlide - 1);
   };
 
   return (
