@@ -1,5 +1,5 @@
 import GlobalStyle from "../src/styles/globalStyle";
-import { Slides } from "./components/Slides.js";
+import { Slides } from "./components/slides/Slides.js";
 import { About } from "./components/About";
 
 function App() {
