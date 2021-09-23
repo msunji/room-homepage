@@ -61,7 +61,6 @@ export const Slides = () => {
 
   return (
     <>
-      {/* <Slide /> */}
       {slideContent.map((slide, index) =>
         index === currentSlide ? (
           <Slide
