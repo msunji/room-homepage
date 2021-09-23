@@ -1,15 +1,30 @@
 import styled from "styled-components";
+import breakpoints from "../../styles/breakpoints";
 
 export const SlideGrid = styled.section`
   display: grid;
-  grid-template-rows: minmax(360px, 1.2fr) 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+
+  @media screen and ${breakpoints.lg} {
+    grid-template-rows: 1fr;
+    grid-template-columns: 58% 1fr;
+  }
 `;
 
 export const SlideImg = styled.div`
+  min-height: 238px;
   background: url(${(props) => props.mobileBg});
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
+
+  @media screen and ${breakpoints.lg} {
+    background: url(${(props) => props.desktopBg});
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
 `;
 
 export const ControlsContainer = styled.div`
@@ -17,14 +32,14 @@ export const ControlsContainer = styled.div`
 `;
 
 export const SlideText = styled.div`
-  padding: calc(5 * var(--padding-y)) 0;
+  padding: calc(6 * var(--padding-y)) 0;
 
   .slide-header {
     font-weight: 600;
     color: var(--black);
     letter-spacing: -1.17px;
     font-size: 2.3em;
-    line-height: 1.11;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
   }
 
@@ -62,6 +77,12 @@ export const SlideControls = styled.div`
     &:focus {
       background: var(--grey-very-dark);
     }
+  }
+
+  @media screen and ${breakpoints.lg} {
+    top: unset;
+    bottom: 0;
+    left: 0;
   }
 `;
 
