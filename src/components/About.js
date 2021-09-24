@@ -32,6 +32,9 @@ const AboutLight = styled.div`
 `;
 
 const AboutContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: calc(5 * var(--padding-y)) 0;
   h2 {
     margin-bottom: 0.75rem;
