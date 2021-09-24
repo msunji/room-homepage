@@ -2,10 +2,6 @@ import styled from "styled-components";
 import breakpoints from "../styles/breakpoints";
 import { Container } from "./layout/Container";
 
-const AboutSection = styled.section`
-  grid-area: about;
-`;
-
 const AboutGrid = styled.div`
   display: grid;
   grid-template-rows: minmax(238px, auto) 1fr minmax(227px, auto);
@@ -43,22 +39,20 @@ const AboutContainer = styled(Container)`
 
 export const About = () => {
   return (
-    <>
-      <AboutGrid>
-        <AboutDark />
-        <AboutContainer>
-          <h2>About our furniture</h2>
-          <p>
-            Our multifunctional collection blends design and function to suit
-            your individual taste. Make each room unique, or pick a cohesive
-            theme that best express your interests and what inspires you. Find
-            the furniture pieces you need, from traditional to contemporary
-            styles or anything in between. Product specialists are available to
-            help you create your dream space.
-          </p>
-        </AboutContainer>
-        <AboutLight />
-      </AboutGrid>
-    </>
+    <AboutGrid>
+      <AboutDark />
+      <AboutContainer>
+        <h2>About our furniture</h2>
+        <p>
+          Our multifunctional collection blends design and function to suit your
+          individual taste. Make each room unique, or pick a cohesive theme that
+          best express your interests and what inspires you. Find the furniture
+          pieces you need, from traditional to contemporary styles or anything
+          in between. Product specialists are available to help you create your
+          dream space.
+        </p>
+      </AboutContainer>
+      <AboutLight />
+    </AboutGrid>
   );
 };
