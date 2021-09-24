@@ -10,6 +10,14 @@ import {
   SlideControls,
   ShopNowText,
 } from "./SlideParts";
+import styled from "styled-components";
+import breakpoints from "../../styles/breakpoints";
+
+const SlidesContainer = styled(Container)`
+  @media screen and ${breakpoints.lg} {
+    width: 70%;
+  }
+`;
 
 const Slide = ({
   header,
@@ -32,14 +40,14 @@ const Slide = ({
           </div>
         </SlideControls>
         <SlideText>
-          <Container>
+          <SlidesContainer>
             <h1 className="slide-header">{header}</h1>
             <p className="slide-body">{body}</p>
             <ShopNowText>
               <h3>Shop Now</h3>
               <ArrowRight />
             </ShopNowText>
-          </Container>
+          </SlidesContainer>
         </SlideText>
       </ControlsContainer>
     </SlideGrid>
