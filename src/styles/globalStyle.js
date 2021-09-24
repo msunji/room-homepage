@@ -45,6 +45,11 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.8;
     letter-spacing: -0.25px;
   }
+
+  a,
+  a:visited {
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyle;
