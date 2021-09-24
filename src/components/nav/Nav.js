@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { ReactComponent as Logo } from "./logo.svg";
 import { Container } from "../layout/Container";
@@ -188,14 +188,30 @@ const NavFlex = styled.div`
 `;
 
 export const Nav = () => {
+  const mobileRef = useRef(null);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const clickOutside = (e) => {
+      if (mobileRef.current && mobileRef.current.contains(e.target)) {
+        return;
+      }
+      setOpen(false);
+    };
+
+    document.body.addEventListener("click", clickOutside);
+
+    return () => {
+      document.body.removeEventListener("click", clickOutside);
+    };
+  }, []);
 
   const handleOpenMenu = () => setOpen(!open);
   const closeMenu = () => setOpen(false);
 
   return (
     <>
-      <Navigation className={`${open ? "open" : ""}`}>
+      <Navigation className={`${open ? "open" : ""}`} ref={mobileRef}>
         <NavContainer>
           <NavFlex>
             <MobileMenuButton onClick={handleOpenMenu} isopen={open}>
