@@ -34,14 +34,14 @@ const Slide = ({
       <AnimatePresence>
         <SlideImg
           as={motion.div}
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0.7 }}
           animate={{
             opacity: 1,
             transition: {
-              ease: [0, 0.3, 0.6, 0.95],
-              duration: 0.05,
+              duration: 0.03,
             },
           }}
+          exit={{ opacity: 0.7 }}
           mobileBg={mobileBg}
           desktopBg={desktopBg}
           className={isCurrent}
