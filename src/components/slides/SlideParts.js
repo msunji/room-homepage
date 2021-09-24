@@ -100,6 +100,25 @@ export const SlideControls = styled.div`
 export const ShopNowText = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+  &:hover,
+  &:focus {
+    h3 {
+      color: var(--grey-dark);
+    }
+    svg {
+      path {
+        fill: var(--grey-dark);
+      }
+    }
+  }
+
+  h3,
+  svg > path {
+    transition: all 0.4s ease;
+  }
 
   h3 {
     color: var(--black);
