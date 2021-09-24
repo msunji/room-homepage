@@ -23,6 +23,7 @@ export const SlideImg = styled.div`
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
+  transition: all 0.4s ease 0.2s;
 
   @media screen and ${breakpoints.lg} {
     background: url(${(props) => props.desktopBg});
