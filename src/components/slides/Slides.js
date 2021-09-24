@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "../layout/Container";
 import { slideContent } from "../../content/slideContent";
 import { ReactComponent as ArrowRight } from "./icon-arrow.svg";
@@ -55,8 +55,7 @@ const Slide = ({
 };
 
 export const Slides = () => {
-  console.log(slideContent);
-
+  // console.log(slideContent);
   let [currentSlide, setCurrentSlide] = useState(0);
   let totalSlides = slideContent.length;
 
@@ -67,6 +66,20 @@ export const Slides = () => {
   const handlePrevClick = () => {
     setCurrentSlide(currentSlide === 0 ? totalSlides - 1 : currentSlide - 1);
   };
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "ArrowRight") {
+        handleNextClick();
+      }
+      if (e.key === "ArrowLeft") {
+        handlePrevClick();
+      }
+    };
+
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [currentSlide]);
 
   return (
     <>
