@@ -27,24 +27,27 @@ const Slide = ({
   desktopBg,
   handleNextClick,
   handlePrevClick,
-  isCurrent,
+  current,
 }) => {
   return (
     <SlideGrid>
       <AnimatePresence exitBeforeEnter>
         <SlideImg
+          key={current}
           as={motion.div}
-          initial={{ opacity: 0.4 }}
+          initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
             transition: {
-              duration: 0.03,
+              ease: "easeInOut",
+              duration: 0.01,
             },
           }}
-          exit={{ opacity: 0 }}
+          exit={{
+            opacity: 0,
+          }}
           mobileBg={mobileBg}
           desktopBg={desktopBg}
-          className={isCurrent}
         />
       </AnimatePresence>
 
@@ -61,7 +64,7 @@ const Slide = ({
           <AnimatePresence>
             <SlidesContainer
               as={motion.div}
-              initial={{ opacity: 0.2 }}
+              initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
                 transition: {
@@ -125,6 +128,7 @@ export const Slides = () => {
             desktopBg={slide.imgDesktop}
             mobileBg={slide.imgMobile}
             className="current"
+            current={currentSlide}
             handleNextClick={handleNextClick}
             handlePrevClick={handlePrevClick}
           />

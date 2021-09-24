@@ -5,6 +5,7 @@ export const SlideGrid = styled.section`
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
+  background: hsl(0, 0%, 85%);
 
   @media screen and ${breakpoints.lg} {
     grid-template-rows: 1fr;
@@ -19,7 +20,7 @@ export const SlideGrid = styled.section`
 
 export const SlideImg = styled.div`
   min-height: 238px;
-  background: url(${(props) => props.mobileBg});
+  background: var(--grey-dark) url(${(props) => props.mobileBg});
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
@@ -40,6 +41,7 @@ export const SlideImg = styled.div`
 
 export const ControlsContainer = styled.div`
   position: relative;
+  background: var(--white);
 
   @media screen and ${breakpoints.lg} {
     grid-column: 6 / 13;
