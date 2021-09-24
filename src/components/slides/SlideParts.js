@@ -8,7 +8,12 @@ export const SlideGrid = styled.section`
 
   @media screen and ${breakpoints.lg} {
     grid-template-rows: 1fr;
-    grid-template-columns: 58% 1fr;
+    // grid-template-columns: 41% 1fr;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  @media screen and ${breakpoints.xl} {
+    grid-template-rows: 1fr;
   }
 `;
 
@@ -24,11 +29,24 @@ export const SlideImg = styled.div`
     background-size: cover;
     background-position: left;
     background-repeat: no-repeat;
+    grid-column: 1 / 6;
+  }
+
+  @media screen and ${breakpoints.xl} {
+    grid-column: 1 / 7;
   }
 `;
 
 export const ControlsContainer = styled.div`
   position: relative;
+
+  @media screen and ${breakpoints.lg} {
+    grid-column: 6 / 13;
+  }
+
+  @media screen and ${breakpoints.xl} {
+    grid-column: 7 / 13;
+  }
 `;
 
 export const SlideText = styled.div`
@@ -41,7 +59,7 @@ export const SlideText = styled.div`
     font-weight: 600;
     color: var(--black);
     letter-spacing: -1.17px;
-    font-size: clamp(2.3rem, 1.5275rem + 2.575vw, 3.33rem);
+    font-size: 2.2em;
     line-height: 1.2;
     margin-bottom: 1.5rem;
   }
@@ -53,6 +71,11 @@ export const SlideText = styled.div`
   @media screen and ${breakpoints.lg} {
     .slide-header {
       margin-bottom: 2rem;
+    }
+  }
+  @media screen and (min-width: 950px) {
+    .slide-header {
+      font-size: 3em;
     }
   }
 `;
