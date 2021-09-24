@@ -18,13 +18,18 @@ const Navigation = styled.nav`
     background: white;
   }
 
-  @media screen and ${breakpoints.lg} {
+  @media screen and ${breakpoints.xl} {
     background: transparent;
   }
 `;
 
 const NavContainer = styled(Container)`
+  max-width: none;
   padding: calc(4.17 * var(--padding-y)) 0;
+
+  @media screen and ${breakpoints.xl} {
+    width: 95%;
+  }
 `;
 
 const MobileMenuButton = styled.div`
@@ -57,7 +62,7 @@ const MobileMenuButton = styled.div`
     }
   }
 
-  @media screen and ${breakpoints.lg} {
+  @media screen and ${breakpoints.xl} {
     display: none;
   }
 `;
@@ -66,19 +71,26 @@ const LinksContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @media screen and ${breakpoints.lg} {
+    justify-content: flex-start;
+  }
 `;
 
 const Links = styled.div`
   display: none;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
   font-weight: 600;
-  margin-left: 6rem;
 
   a {
     color: var(--black);
     transition: all 0.4s ease;
     position: relative;
+
+    &:not(first-of-type) {
+      margin-left: 2rem;
+    }
 
     &::after {
       content: "";
@@ -109,7 +121,7 @@ const Links = styled.div`
     display: flex;
   }
 
-  @media screen and ${breakpoints.lg} {
+  @media screen and ${breakpoints.xl} {
     display: flex;
     a {
       color: var(--white);
@@ -154,16 +166,25 @@ const ModalBg = styled.div`
 
 const StyledLogo = styled(Logo)`
   cursor: pointer;
-  display: block;
+  display: flex;
+  justify-self: flex-start;
 
   &.open {
     display: none;
+  }
+
+  @media screen and ${breakpoints.lg} {
+    margin-left: 2rem;
   }
 `;
 
 const NavFlex = styled.div`
   display: flex;
   align-items: center;
+
+  @media screen and ${breakpoints.xl} {
+    max-width: 400px;
+  }
 `;
 
 export const Nav = () => {
@@ -177,17 +198,16 @@ export const Nav = () => {
       <Navigation className={`${open ? "open" : ""}`}>
         <NavContainer>
           <NavFlex>
-            <MobileMenuButton
-              onClick={handleOpenMenu}
-              className={`${open ? "open" : ""}`}
-              isopen={open}
-            >
+            <MobileMenuButton onClick={handleOpenMenu} isopen={open}>
               <div></div>
               <div></div>
               <div></div>
             </MobileMenuButton>
             <LinksContainer>
-              <StyledLogo className={`${open ? "open" : ""}`} />
+              <StyledLogo
+                className={`${open ? "open" : ""}`}
+                style={{ overflow: "visible" }}
+              />
               <Links className={`${open ? "open" : ""}`}>
                 <a href="#" onClick={closeMenu}>
                   home
