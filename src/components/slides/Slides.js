@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Container } from "../layout/Container";
 import { slideContent } from "../../content/slideContent";
@@ -26,10 +27,27 @@ const Slide = ({
   desktopBg,
   handleNextClick,
   handlePrevClick,
+  isCurrent,
 }) => {
   return (
     <SlideGrid>
-      <SlideImg mobileBg={mobileBg} desktopBg={desktopBg} />
+      <AnimatePresence>
+        <SlideImg
+          as={motion.div}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: {
+              ease: [0, 0.3, 0.6, 0.95],
+              duration: 0.05,
+            },
+          }}
+          mobileBg={mobileBg}
+          desktopBg={desktopBg}
+          className={isCurrent}
+        />
+      </AnimatePresence>
+
       <ControlsContainer>
         <SlideControls>
           <div className="controls controls-left" onClick={handlePrevClick}>
@@ -40,14 +58,25 @@ const Slide = ({
           </div>
         </SlideControls>
         <SlideText>
-          <SlidesContainer>
-            <h1 className="slide-header">{header}</h1>
-            <p className="slide-body">{body}</p>
-            <ShopNowText>
-              <h3>Shop Now</h3>
-              <ArrowRight />
-            </ShopNowText>
-          </SlidesContainer>
+          <AnimatePresence>
+            <SlidesContainer
+              as={motion.div}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  duration: 1,
+                },
+              }}
+            >
+              <h1 className="slide-header">{header}</h1>
+              <p className="slide-body">{body}</p>
+              <ShopNowText>
+                <h3>Shop Now</h3>
+                <ArrowRight />
+              </ShopNowText>
+            </SlidesContainer>
+          </AnimatePresence>
         </SlideText>
       </ControlsContainer>
     </SlideGrid>
@@ -70,16 +99,20 @@ export const Slides = () => {
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowRight") {
-        handleNextClick();
+        setCurrentSlide(
+          currentSlide === totalSlides - 1 ? 0 : currentSlide + 1
+        );
       }
       if (e.key === "ArrowLeft") {
-        handlePrevClick();
+        setCurrentSlide(
+          currentSlide === 0 ? totalSlides - 1 : currentSlide - 1
+        );
       }
     };
 
     document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
-  }, [currentSlide]);
+  }, [currentSlide, totalSlides]);
 
   return (
     <>
@@ -91,6 +124,7 @@ export const Slides = () => {
             body={slide.body}
             desktopBg={slide.imgDesktop}
             mobileBg={slide.imgMobile}
+            className="current"
             handleNextClick={handleNextClick}
             handlePrevClick={handlePrevClick}
           />
