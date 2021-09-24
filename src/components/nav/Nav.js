@@ -226,25 +226,25 @@ export const Nav = () => {
               />
               <Links className={`${open ? "open" : ""}`}>
                 <a
-                  href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq/hub/room-homepage-DpDI16m3I"
+                  href="https://fe-mentor-room-homepage.vercel.app/"
                   onClick={closeMenu}
                 >
                   home
                 </a>
                 <a
-                  href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq/hub/room-homepage-DpDI16m3I"
+                  href="https://fe-mentor-room-homepage.vercel.app/"
                   onClick={closeMenu}
                 >
                   shop
                 </a>
                 <a
-                  href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq/hub/room-homepage-DpDI16m3I"
+                  href="https://fe-mentor-room-homepage.vercel.app/"
                   onClick={closeMenu}
                 >
                   about
                 </a>
                 <a
-                  href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq/hub/room-homepage-DpDI16m3I"
+                  href="https://fe-mentor-room-homepage.vercel.app/"
                   onClick={closeMenu}
                 >
                   contact
