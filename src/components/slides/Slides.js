@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container } from "../layout/Container";
 import { slideContent } from "../../content/slideContent";
+import { ReactComponent as ArrowRight } from "./icon-arrow.svg";
 import {
   SlideGrid,
   SlideImg,
@@ -36,7 +37,7 @@ const Slide = ({
             <p className="slide-body">{body}</p>
             <ShopNowText>
               <h3>Shop Now</h3>
-              <img src="/img/icon-arrow.svg" alt="Long arrow pointing right" />
+              <ArrowRight />
             </ShopNowText>
           </Container>
         </SlideText>
