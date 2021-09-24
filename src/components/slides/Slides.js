@@ -31,17 +31,17 @@ const Slide = ({
 }) => {
   return (
     <SlideGrid>
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         <SlideImg
           as={motion.div}
-          initial={{ opacity: 0.7 }}
+          initial={{ opacity: 0.4 }}
           animate={{
             opacity: 1,
             transition: {
               duration: 0.03,
             },
           }}
-          exit={{ opacity: 0.7 }}
+          exit={{ opacity: 0 }}
           mobileBg={mobileBg}
           desktopBg={desktopBg}
           className={isCurrent}
@@ -61,7 +61,7 @@ const Slide = ({
           <AnimatePresence>
             <SlidesContainer
               as={motion.div}
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 0.2 }}
               animate={{
                 opacity: 1,
                 transition: {
