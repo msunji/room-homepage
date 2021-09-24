@@ -225,16 +225,28 @@ export const Nav = () => {
                 style={{ overflow: "visible" }}
               />
               <Links className={`${open ? "open" : ""}`}>
-                <a href="#" onClick={closeMenu}>
+                <a
+                  href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq/hub/room-homepage-DpDI16m3I"
+                  onClick={closeMenu}
+                >
                   home
                 </a>
-                <a href="#" onClick={closeMenu}>
+                <a
+                  href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq/hub/room-homepage-DpDI16m3I"
+                  onClick={closeMenu}
+                >
                   shop
                 </a>
-                <a href="#" onClick={closeMenu}>
+                <a
+                  href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq/hub/room-homepage-DpDI16m3I"
+                  onClick={closeMenu}
+                >
                   about
                 </a>
-                <a href="#" onClick={closeMenu}>
+                <a
+                  href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq/hub/room-homepage-DpDI16m3I"
+                  onClick={closeMenu}
+                >
                   contact
                 </a>
               </Links>
