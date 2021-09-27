@@ -9,7 +9,6 @@ export const SlideGrid = styled.section`
 
   @media screen and ${breakpoints.lg} {
     grid-template-rows: 1fr;
-    // grid-template-columns: 41% 1fr;
     grid-template-columns: repeat(12, 1fr);
   }
 
@@ -120,6 +119,13 @@ export const SlideControls = styled.div`
     left: 0;
     height: 80px;
     width: 160px;
+
+    .controls {
+      img {
+        height: auto;
+        width: auto;
+      }
+    }
   }
 `;
 
