@@ -31,25 +31,25 @@ const Slide = ({
 }) => {
   return (
     <SlideGrid>
-      {/* <AnimatePresence exitBeforeEnter> */}
-      <SlideImg
-        key={current}
-        // as={motion.div}
-        // initial={{ opacity: 0 }}
-        // animate={{
-        //   opacity: 1,
-        //   transition: {
-        //     ease: "easeInOut",
-        //     duration: 0.01,
-        //   },
-        // }}
-        // exit={{
-        //   opacity: 0,
-        // }}
-        mobileBg={mobileBg}
-        desktopBg={desktopBg}
-      />
-      {/* </AnimatePresence> */}
+      <AnimatePresence exitBeforeEnter>
+        <SlideImg
+          key={current}
+          as={motion.div}
+          initial={{ opacity: 1 }}
+          animate={{
+            opacity: 1,
+            transition: {
+              ease: "easeInOut",
+              duration: 0.01,
+            },
+          }}
+          exit={{
+            opacity: 0,
+          }}
+          mobileBg={mobileBg}
+          desktopBg={desktopBg}
+        />
+      </AnimatePresence>
 
       <ControlsContainer>
         <SlideControls>
@@ -61,25 +61,25 @@ const Slide = ({
           </div>
         </SlideControls>
         <SlideText>
-          {/* <AnimatePresence> */}
-          <SlidesContainer
-          // as={motion.div}
-          // initial={{ opacity: 0 }}
-          // animate={{
-          //   opacity: 1,
-          //   transition: {
-          //     duration: 1,
-          //   },
-          // }}
-          >
-            <h1 className="slide-header">{header}</h1>
-            <p className="slide-body">{body}</p>
-            <ShopNowText>
-              <h3>Shop Now</h3>
-              <ArrowRight />
-            </ShopNowText>
-          </SlidesContainer>
-          {/* </AnimatePresence> */}
+          <AnimatePresence>
+            <SlidesContainer
+              as={motion.div}
+              initial={{ opacity: 1 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  duration: 1,
+                },
+              }}
+            >
+              <h1 className="slide-header">{header}</h1>
+              <p className="slide-body">{body}</p>
+              <ShopNowText>
+                <h3>Shop Now</h3>
+                <ArrowRight />
+              </ShopNowText>
+            </SlidesContainer>
+          </AnimatePresence>
         </SlideText>
       </ControlsContainer>
     </SlideGrid>
