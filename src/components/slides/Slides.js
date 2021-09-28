@@ -35,7 +35,7 @@ const Slide = ({
         <SlideImg
           key={current}
           as={motion.div}
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
             transition: {
@@ -64,7 +64,7 @@ const Slide = ({
           <AnimatePresence>
             <SlidesContainer
               as={motion.div}
-              initial={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
                 transition: {
