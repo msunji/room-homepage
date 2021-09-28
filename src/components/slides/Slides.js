@@ -11,6 +11,7 @@ import {
   SlideControls,
   ShopNowText,
 } from "./SlideParts";
+import { Nav } from "../nav/Nav";
 import styled from "styled-components";
 import breakpoints from "../../styles/breakpoints";
 
@@ -48,7 +49,9 @@ const Slide = ({
           }}
           mobileBg={mobileBg}
           desktopBg={desktopBg}
-        />
+        >
+          <Nav />
+        </SlideImg>
       </AnimatePresence>
 
       <ControlsContainer>
