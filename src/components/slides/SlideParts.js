@@ -18,6 +18,7 @@ export const SlideGrid = styled.section`
 `;
 
 export const SlideImg = styled.div`
+  position: relative;
   min-height: 238px;
   background: var(--grey-dark) url(${(props) => props.mobileBg});
   background-size: cover;
