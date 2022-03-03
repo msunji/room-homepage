@@ -5,7 +5,7 @@
 <br />
 <p align="center">
   <a href="https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq">View Challenge</a> | <a href="https://fe-mentor-room-homepage.vercel.app/">View Live Site</a>
-</div>
+</p>
 <br />
 
 Users should be able to: 
