@@ -14,3 +14,12 @@ Users should be able to:
 - Navigate the slider using either their mouse/trackpad or keyboard
 
 ---
+
+## Notes/Overview
+
+I went with Styled Components again this time around and used Framer Motion to add really simple fade in animations for the slider component.
+
+## Tech Stack
+- React, boostrapped with CRA
+- Framer Motion
+- Styled Components
