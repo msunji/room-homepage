@@ -138,7 +138,7 @@ export const ShopNowText = styled.div`
 
   &:hover,
   &:focus {
-    h3 {
+    h2 {
       color: var(--grey-dark);
     }
     svg {
@@ -148,12 +148,12 @@ export const ShopNowText = styled.div`
     }
   }
 
-  h3,
+  h2,
   svg > path {
     transition: all 0.4s ease;
   }
 
-  h3 {
+  h2 {
     color: var(--black);
     font-weight: 500;
     letter-spacing: 10px;
