@@ -78,7 +78,7 @@ const Slide = ({
               <h1 className="slide-header">{header}</h1>
               <p className="slide-body">{body}</p>
               <ShopNowText>
-                <h3>Shop Now</h3>
+                <h2>Shop Now</h2>
                 <ArrowRight />
               </ShopNowText>
             </SlidesContainer>
